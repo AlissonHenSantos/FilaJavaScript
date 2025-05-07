@@ -1,9 +1,12 @@
-const minhaFila = new Fila(5);
+const minhaFila = new FilaCircular(5);
 
 function addElemento(){
     const novoElemento = 
        document.getElementById("txtnovoNome");
     if(!minhaFila.isFull()){
+       //const novoAtendimento = new Atendimento();
+       // setar valor do objeto atendimento e inserir na fila
+
        minhaFila.enqueue(novoElemento.value);
        mostrarFila();
        novoElemento.value = ""; // limpa
@@ -24,6 +27,7 @@ function mostrarFila(){
    }
 }
 
+
 //-----------------------------
 function atenderFila(){
    if(!minhaFila.isEmpty()){
@@ -35,4 +39,3 @@ function atenderFila(){
    else
       alert("Fila vazia!");
 }
-//---------------------------------------
