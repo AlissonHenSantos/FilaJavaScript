@@ -26,10 +26,12 @@ function buscar(){
    const cpf =  document.getElementById('txtnovoCpf').value
    const elemento = document.getElementById('mensagem-remocao')
 
-   for(let e of fila){
-      
+   let localNaFila = 0
+   for(let item of fila){
+      localNaFila++
+      if(item.getCpf() === cpf) return elemento.innerHTML = `${item} posição: ${localNaFila}`
    }
-   elemento.innerHTML = cont
+   alert("Cpf não encontrado")
 
 }
 
@@ -56,3 +58,4 @@ function mostrarFila(){
     else
        alert("Fila vazia!");
  }
+
